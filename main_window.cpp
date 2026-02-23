@@ -62,14 +62,9 @@ MainWindow::MainWindow(QWidget *parent)
         qDebug() << "DB Initialized successfully";
     }
 
-    // OPTION A: Save RAW data directly from Transport
-    // connect(m_active_transport, &TransportInterface::data_received,
-    //         m_db_manager, &DatabaseManager::save_data);
-
-    // OPTION B (Better): Save processed data from ProtocolHandler
-    // You might need to adjust save_data() to take struct/strings instead of QByteArray
-    // connect(m_protocol_handler, &ProtocolHandler::packetParsed,
-    //         m_db_manager, &DatabaseManager::save_data);
+    // Send the received data to the database to be saved
+    connect(device_manager_, &DeviceManager::data_received,
+            db_manager_, &DatabaseManager::save_data);
 }
 
 MainWindow::~MainWindow() {
