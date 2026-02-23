@@ -29,10 +29,10 @@ jobs:
       - name: Package with windeployqt
         run: |
           cd build/Release
-          windeployqt appUsbMonitor.exe
+          windeployqt app_Vacuumeter.exe
 
       - name: Upload the Zip File
         uses: actions/upload-artifact@v4
         with:
-          name: UsbMonitor-Windows
+          name: Vacuumeter-Windows
           path: build/Release/
