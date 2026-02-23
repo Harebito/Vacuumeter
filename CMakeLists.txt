@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(UsbMonitor)
+project(Vacuumeter)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -8,15 +8,14 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets SerialPort Network Sql)
 
 qt_standard_project_setup()
 
-qt_add_executable(appUsbMonitor
+qt_add_executable(appVacuumeter
         main.cpp
         main_window.cpp
         usb_transport.cpp
-        wifi_transport.cpp    # Don't forget this!
-        protocol_handler.cpp  # And this!
+        wifi_transport.cpp
+        protocol_handler.cpp
         database_manager.cpp
 
-        # Headers are optional here but good for IDEs
         transport_interface.h
         wifi_transport.h
         usb_transport.h
@@ -25,7 +24,7 @@ qt_add_executable(appUsbMonitor
         database_manager.h
 )
 
-target_link_libraries(appUsbMonitor PRIVATE
+target_link_libraries(appVacuumeter PRIVATE
         Qt6::Widgets
         Qt6::SerialPort
         Qt6::Network
