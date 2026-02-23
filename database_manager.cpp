@@ -25,7 +25,7 @@ bool DatabaseManager::init() {
     QDir dir(path);
     if (!dir.exists()) dir.mkpath("."); // Ensure folder exists
 
-    QString dbPath = path + "/usb_monitor_log.db";
+    QString dbPath = path + "/usb_Vacuumeter_log.db";
     m_db.setDatabaseName(dbPath);
 
     qDebug() << "Database path:" << dbPath;

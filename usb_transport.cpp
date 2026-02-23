@@ -45,8 +45,8 @@ bool DeviceManager::connect_to_port(const QString &ui_text) {
 
     serial_port_->setPortName(port_name);
 
-    // 3. ESP32 Standard Configuration
-    serial_port_->setBaudRate(QSerialPort::Baud115200);
+    // 3. Standard Configuration
+    serial_port_->setBaudRate(QSerialPort::Baud115200); // Adjust if your device uses a different rate
     serial_port_->setDataBits(QSerialPort::Data8);
     serial_port_->setParity(QSerialPort::NoParity);
     serial_port_->setStopBits(QSerialPort::OneStop);

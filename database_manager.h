@@ -17,7 +17,7 @@ public:
 
 public slots:
     // Slot to capture data.
-    // You can change QByteArray to QString or specific values depending on what you save.
+    // You can change QByteArray to QString or specific values depending on what to save.
     void save_data(const QByteArray &raw_data);
 
 private:

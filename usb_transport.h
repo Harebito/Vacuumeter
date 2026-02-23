@@ -29,12 +29,4 @@ private:
     QSerialPort *serial_port_; // snake_case member variable
 };
 
-/*
- * IMPLEMENTATION
- * void UsbTransport::send_data(const QByteArray &data) {
- *  if (serial_->isOpen()) {
- *     serial_->write(data); // Sends command to ATmega
- * }
- *}
- */
 #endif // USBMONITOR_USB_TRANSPORT_H

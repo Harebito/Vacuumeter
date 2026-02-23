@@ -6,7 +6,7 @@
 #include "usb_transport.h"
 #include "database_manager.h"
 
-void MainWindow::setup_menu() {
+void MainWindow::setup_menu() { // This is for adding a menu item that shows the Qt About dialog
     // 1. Create (or get) the Menu Bar
     // QMainWindow usually has one by default, but this ensures we use it.
     QMenuBar *menu_bar = this->menuBar();
@@ -17,7 +17,7 @@ void MainWindow::setup_menu() {
     // 3. Create the "About Qt" Action
     QAction *about_qt_action = new QAction(tr("About &Qt"), this);
 
-    // Optional: Add a status tip (shows at bottom left of window on hover)
+    // Optional
     about_qt_action->setStatusTip(tr("Show the Qt library's About box"));
 
     // 4. Connect the Action to the global Qt "About" slot
@@ -156,7 +156,7 @@ void MainWindow::append_data_to_console(const QByteArray &data) {
     // Optional: Convert raw bytes to String
     QString msg = QString::fromUtf8(data);
 
-    // Timestamp for the log
+    // Optional: Timestamp for the log
     QString timestamp = QDateTime::currentDateTime().toString("HH:mm:ss");
 
     console_output_->append(QString("[%1] %2").arg(timestamp, msg));

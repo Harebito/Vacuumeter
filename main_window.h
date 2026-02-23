@@ -43,7 +43,7 @@ private:
     QPushButton *scan_btn_;
     QPushButton *connect_btn_;
     QLabel *status_label_;
-    QTextEdit *console_output_; // To display incoming USB data
+    QTextEdit *console_output_; // To display incoming USB data -- Optional
 
     // DB Manager
     DatabaseManager *db_manager_;
